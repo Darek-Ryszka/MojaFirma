@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
 </head>
 <body>
     <div id="app">
@@ -82,9 +82,13 @@
         @yield('javascript')
     </script>
     @yield('js-files') --}}
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript">
-        @yield('javascript')
-    </script>
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite
+        <script src="/@vite/client"></script>
+        <script src="{{ vite_asset('resources/js/app.js') }}"></script> --}}
+        <script type="text/javascript">
+            @yield('javascript')
+        </script>
 </body>
 </html>

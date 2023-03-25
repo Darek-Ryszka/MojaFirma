@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @extends('layouts.app')
 
 @section('content')
@@ -39,23 +41,26 @@
     {{ $users->links() }}
 </div>
 @endsection
+
 @section('javascript')
-    $(function() {
-        $('.delete').click(function() {
-            $.ajax({
-                method: "DELETE",
-                url: "http://shop.test/users/" + $(this).data("id")
-                // data: { id: $(this).data("id") }
-            })
-            .done(function(response) {
-                window.location.reload();
-            })
-            .fail(function (response) {
-                alert("ERROR");
+        $(function() {
+            $('.delete').click(function() {
+                $.ajax({
+                    method: "DELETE",
+                    url: "http://shop.test/users/" + $(this).data("id")
+                    // data: { id: $(this).data("id") }
+                })
+                .done(function(response) {
+                    // window.location.reload();
+                })
+                .fail(function (response) {
+                    console.log(response.responseText);
+                    alert("ERROR");
+                });
             });
         });
-    });
 @endsection
+
 {{-- @section('javascript')
     const deleteUrl = "{{ url('users') }}/";
     const confirmDelete = "{{ __('shop.messages.delete_confirm') }}";
