@@ -24,12 +24,6 @@
                 <td>{{ $user->surname }}</td>
                 <td>{{ $user->phone_number }}</td>
                 <td>
-                    {{-- <a href="{{ route('users.edit', $user->id) }}">
-                        <button class="btn btn-success btn-sm"><i class="far fa-edit"></i></button>
-                    </a> --}}
-                    {{-- <button class="btn btn-danger btn-sm delete">
-                        X
-                    </button> --}}
                     <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">
                         X
                     </button>
@@ -51,20 +45,11 @@
                     // data: { id: $(this).data("id") }
                 })
                 .done(function(response) {
-                    // window.location.reload();
+                    window.location.reload();
                 })
                 .fail(function (response) {
-                    console.log(response.responseText);
                     alert("ERROR");
                 });
             });
         });
 @endsection
-
-{{-- @section('javascript')
-    const deleteUrl = "{{ url('users') }}/";
-    const confirmDelete = "{{ __('shop.messages.delete_confirm') }}";
-@endsection
-@section('js-files')
-    <script src="{{ asset('js/delete.js') }}"></script>
-@endsection --}}
