@@ -12,8 +12,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
     
 </head>
 <body>
@@ -77,18 +75,10 @@
             @yield('content')
         </main>
     </div>
-    {{-- <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript">
-        @yield('javascript')
-    </script>
-    @yield('js-files') --}}
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    {{-- @vite
-        <script src="/@vite/client"></script>
-        <script src="{{ vite_asset('resources/js/app.js') }}"></script> --}}
+    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js',]) 
         <script type="text/javascript">
             @yield('javascript')
         </script>
+        @yield('js-files')
 </body>
 </html>
