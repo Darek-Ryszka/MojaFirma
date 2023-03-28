@@ -1,16 +1,21 @@
 $(function() {
+    $('div.products-count a').click(function(event) {
+        event.preventDefault();
+        $('a.products-actual-count').text($(this).text());
+        getProducts($(this).text());
+    });
 
+    $('a#filter-button').click(function(event) {
+        event.preventDefault();
+        getProducts($('a.products-actual-count').text());
+    });
 
-
-
-    
-    $('a#filter-button').click(function() {
+    function getProducts(paginate) {
         const form = $('form.sidebar-filter').serialize();
-        console.log(form);
         $.ajax({
             method: "GET",
             url: "/",
-            data: form
+            data: form + "&" + $.param({paginate: paginate})
         })
         .done(function (response) {
             $('div#products-wrapper').empty();
@@ -18,7 +23,7 @@ $(function() {
                 const html = '<div class="col-6 col-md-6 col-lg-4 mb-3">' +
                     '            <div class="card h-100 border-0">' +
                     '                <div class="card-img-top">' +
-                    '                    <img src="' + getImage(product) +'" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">' +
+                    '                    <img src="' + getImage(product) + '" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">' +
                     '                </div>' +
                     '                <div class="card-body text-center">' +
                     '                    <h4 class="card-title">' +
@@ -30,14 +35,11 @@ $(function() {
                     '                </div>' +
                     '            </div>' +
                     '        </div>';
-                $('div#products-wrapper').append(html);    
+                $('div#products-wrapper').append(html);
             });
-        })
-        .fail(function (data) {
-            alert("Errrrrrrrrrrror");
         });
-    });
-
+    }
+    
     function getImage(product) {
         if (!!product.image_path) {
             return storagePath + product.image_path;
