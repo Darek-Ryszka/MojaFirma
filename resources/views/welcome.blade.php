@@ -36,7 +36,7 @@
                           </div>
                         </div>
                       </div>
-                    <div class="row">
+                      <div class="row" id="products-wrapper">
                         @foreach($products as $product)
                             <div class="col-6 col-md-6 col-lg-4 mb-3">
                                 <div class="card h-100 border-0">
@@ -49,9 +49,7 @@
                                     </div>
                                     <div class="card-body text-center">
                                         <h4 class="card-title">
-{{--                                            <a href="product.html" class=" font-weight-bold text-dark text-uppercase small">--}}
-                                                {{ $product->name }}
-{{--                                            </a>--}}
+                                            {{ $product->name }}
                                         </h4>
                                         <h5 class="card-price small">
                                             <i>PLN {{ $product->price }}</i>
@@ -109,7 +107,10 @@
         </div>
     </div>
 @endsection
-
+@section('javascript')
+    const storagePath = '{{ asset('storage') }}/';
+    {{-- const defaultImage = '{{ $defaultImage }}'; --}}
+@endsection
 @section('js-files')
     <script src="{{ asset("js/welcome.js") }}"></script>
 @endsection
