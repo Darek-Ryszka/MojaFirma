@@ -76,7 +76,7 @@
             @yield('content')
         </main>
     </div>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js',]) 
+    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js', 'resources/js/welcome.js',]) 
         <script type="text/javascript">
             @yield('javascript')
         </script>
