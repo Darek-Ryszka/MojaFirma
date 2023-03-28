@@ -44,7 +44,7 @@
                                         @if(!is_null($product->image_path))
                                             <img src="{{ asset('storage/' . $product->image_path) }}" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">
                                         @else
-                                            <img src="https://via.placeholder.com/240x240/5fa9f8/efefef" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">
+                                            <img src="{{ $defaultImage }}" class="img-fluid mx-auto d-block" alt="Zdjęcie produktu">
                                         @endif
                                     </div>
                                     <div class="card-body text-center">
@@ -109,7 +109,7 @@
 @endsection
 @section('javascript')
     const storagePath = '{{ asset('storage') }}/';
-    {{-- const defaultImage = '{{ $defaultImage }}'; --}}
+    const defaultImage = '{{ $defaultImage }}';
 @endsection
 @section('js-files')
     <script src="{{ asset("js/welcome.js") }}"></script>
