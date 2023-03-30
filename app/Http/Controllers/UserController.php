@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use function PHPUnit\Framework\throwException;
 
 class UserController extends Controller
 {
@@ -69,6 +76,7 @@ class UserController extends Controller
     {
         try {
             $user->delete();
+            Session::flash('status', __('shop.user.status.delete.success'));
             return response()->json([
                 'status' => 'success'
             ]);
