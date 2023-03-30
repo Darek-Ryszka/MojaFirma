@@ -8,11 +8,11 @@
     @include('helpers.flash-messages')
     <div class="row">       
         <div class="col-6">
-            <h1>{{ __('shop.product.index_title') }}</h1>
+            <h1><i class="fas fa-clipboard-list"></i> {{ __('shop.product.index_title') }}</h1>
         </div>
         <div class="col-6">
           <a href="{{ route('products.create') }}">
-            <button type="button" class="btn btn-primary" style="float: right;">{{ __('shop.button.add') }}</button>
+            <button type="button" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i> {{ __('shop.button.add') }}</button>
           </a>
         </div>
       </div>
@@ -40,13 +40,13 @@
                     <td>@if($product->hasCategory()){{ $product->category->name }}@endif</td>
                     <td>
                         <a href="{{ route('products.show', $product->id) }}">
-                            <button class="btn btn-secondary btn-sm">P</button>
+                            <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </a>
                         <a href="{{ route('products.edit', $product->id) }}">
-                            <button class="btn btn-warning btn-sm">E</button>
+                            <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
                         </a>
                         <button class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}">
-                            X
+                            <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
                 </tr>
