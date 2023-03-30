@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-12">
             <div class="alert alert-success">
-                <button class="close" data-dismiss="alert" aria-hidden="true">
-                    &times;
-                </button>
                 {{ session('status') }}
+                <button class="btn-close float-end" data-dismiss="alert" aria-hidden="true">
+                    {{-- &times; --}}
+                </button>              
             </div>
         </div>
     </div>
