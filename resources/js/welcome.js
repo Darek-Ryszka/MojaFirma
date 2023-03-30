@@ -26,7 +26,7 @@ $(function() {
                 cancelButtonText: '<i class="fas fa-shopping-bag"></i> Kontynuuj zakupy'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    alert('OK');
+                    window.location = WELCOME_DATA.listCart;
                 }
             })
         })
@@ -58,17 +58,27 @@ $(function() {
                     '                        <i>PLN ' + product.price + '</i>' +
                     '                    </h5>' +
                     '                </div>' +
+                    '                <button class="btn btn-success btn-sm add-cart-button"' + getDisabled() + ' data-id="' + product.id + '">' +
+                    '                   <i class="fas fa-cart-plus"></i> Dodaj do koszyka' +
+                    '                </button>' +
                     '            </div>' +
                     '        </div>';
                 $('div#products-wrapper').append(html);
             });
         });
     }
-    
+
     function getImage(product) {
         if (!!product.image_path) {
             return WELCOME_DATA.storagePath + product.image_path;
         }
         return WELCOME_DATA.defaultImage;
+    }
+
+    function getDisabled() {
+        if (WELCOME_DATA.isGuest) {
+            return ' disabled';
+        }
+        return '';
     }
 });

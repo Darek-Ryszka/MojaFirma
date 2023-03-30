@@ -13,6 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css-files')
 </head>
 <body>
     <div id="app">
@@ -57,6 +60,7 @@
                                         <a class="dropdown-item" href="/users/list">Użytkownicy</a>
                                         <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
                                     @endcan
+                                    <a class="dropdown-item" href="{{ route('cart.index') }}">Koszyk</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -78,7 +82,7 @@
             @yield('content')
         </main>
     </div>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js', 'resources/js/welcome.js',]) 
+    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js', 'resources/js/welcome.js', 'resources/css/cart.css',]) 
         <script type="text/javascript">
             @yield('javascript')
         </script>
