@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\Address;
 use App\Models\User;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use function PHPUnit\Framework\throwException;
 
@@ -52,18 +56,35 @@ class UserController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  User  $user
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(User $user): View
     {
-        //
+        return view('users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  UpdateUserRequest  $request
+     * @param  User  $user
+     * @return RedirectResponse
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateUserRequest $request, User $user): RedirectResponse
     {
-        //
+        $addressValidated = $request->validated()['address'];
+        if ($user->hasAddress()) {
+            $address = $user->address;
+            $address->fill($addressValidated);
+        } else {
+            $address = new Address($addressValidated);
+        }
+        $user->address()->save($address);
+        return redirect(route('users.index'))->with('status', __('shop.product.status.update.success'));
     }
 
     /**
