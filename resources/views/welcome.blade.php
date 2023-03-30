@@ -27,12 +27,12 @@
                             <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                           </div>
                           <div class="dropdown">
-                            <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                            <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6<span class="caret"></span></a>
                             <div class="dropdown-menu dropdown-menu-right products-count" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
-                              <a class="dropdown-item" href="#">5</a>
-                              <a class="dropdown-item" href="#">10</a>
+                              <a class="dropdown-item" href="#">6</a>
+                              <a class="dropdown-item" href="#">9</a>
+                              <a class="dropdown-item" href="#">12</a>
                               <a class="dropdown-item" href="#">15</a>
-                              <a class="dropdown-item" href="#">20</a>
                             </div>
                           </div>
                         </div>
@@ -70,12 +70,12 @@
                                 <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
                             </div>
                             <div class="dropdown ml-auto">
-                                <a class="btn btn-light btn-lg dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">5<span class="caret"></span></a>
+                                <a class="btn btn-light btn-lg dropdown-toggle products-actual-count" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6<span class="caret"></span></a>
                                 <div class="dropdown-menu products-count" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">5</a>
-                                    <a class="dropdown-item" href="#">10</a>
+                                    <a class="dropdown-item" href="#">6</a>
+                                    <a class="dropdown-item" href="#">9</a>
+                                    <a class="dropdown-item" href="#">12</a>
                                     <a class="dropdown-item" href="#">15</a>
-                                    <a class="dropdown-item" href="#">20</a>
                                 </div>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ class WelcomeController extends Controller
     public function index(Request $request): View|JsonResponse
     {
         $filters = $request->query('filter');
-        $paginate = $request->query('paginate') ?? 5;
+        $paginate = $request->query('paginate') ?? 6;
 
         $query = Product::query();
         if (!is_null($filters)) {
