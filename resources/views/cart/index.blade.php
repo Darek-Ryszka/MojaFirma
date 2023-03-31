@@ -59,8 +59,12 @@
                                 </div>
                                 <div class="cart_buttons">
                                     <a href="/" class="button cart_button_clear">Wróć do sklepu</a>
-                                    <button type="submit" class="button cart_button_checkout" {{ !$cart->hasItems() ? 'disabled' : '' }}>Zapłać</button>
+                                    <button type="submit" class="button cart_button_checkout" {{ !$cart->hasItems() ? 'disabled' : '' }}>Zapłać Przelewy24</button>
                                 </div>
+                            </form>
+                            <form action="/session" method="POST" style="text-align: right;">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <button type="submit" class="button cart_button_checkout" id="checkout-live-button">Zapłać Stripe</button>
                             </form>
                         </div>
                     </div>

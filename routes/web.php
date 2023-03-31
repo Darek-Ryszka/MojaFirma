@@ -47,4 +47,8 @@ Route::middleware(['auth', 'verified'])->group(function() {
 Route::post('/payment/status', [PaymentController::class, 'status']);
 Route::get('/hello', [HelloWorldController::class, 'show']);
 
+Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('success');
+Route::get('/cancel', 'App\Http\Controllers\StripeController@cancel')->name('cancel');
+
 Auth::routes(['verify' => true]);

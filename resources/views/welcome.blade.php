@@ -33,6 +33,8 @@
                               <a class="dropdown-item" href="#">9</a>
                               <a class="dropdown-item" href="#">12</a>
                               <a class="dropdown-item" href="#">15</a>
+                              <a class="dropdown-item" href="#">20</a>
+                              <a class="dropdown-item" href="#">25</a>
                             </div>
                           </div>
                         </div>
@@ -79,6 +81,8 @@
                                     <a class="dropdown-item" href="#">9</a>
                                     <a class="dropdown-item" href="#">12</a>
                                     <a class="dropdown-item" href="#">15</a>
+                                    <a class="dropdown-item" href="#">20</a>
+                                    <a class="dropdown-item" href="#">25</a>
                                 </div>
                             </div>
                         </div>
