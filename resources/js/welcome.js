@@ -10,7 +10,8 @@ $(function() {
         getProducts($('a.products-actual-count').first().text());
     });
 
-    $('button.add-cart-button').click(function(event) {
+    //usunięcie bugga unimozliwiajacego dodanie produktu po filtrowaniu
+    $(document).on('click', 'button.add-cart-button', function(event) {     
         event.preventDefault();
         $.ajax({
             method: "POST",
