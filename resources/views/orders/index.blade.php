@@ -20,7 +20,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Ilość</th>
                 <th scope="col">Cena [PLN]</th>
-                <th scope="col">Status zamówienia</th>
+                {{-- <th scope="col">Status zamówienia</th> --}}
                 <th scope="col">Produkty</th>
             </tr>
             </thead>

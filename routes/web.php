@@ -51,4 +51,6 @@ Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('
 Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('success');
 Route::get('/cancel', 'App\Http\Controllers\StripeController@cancel')->name('cancel');
 
+Route::post('/stripe/update-status', [StripeController::class, 'updatePaymentStatus'])->name('stripe.update-status');
+
 Auth::routes(['verify' => true]);
